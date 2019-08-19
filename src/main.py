@@ -195,7 +195,7 @@ def drawSignage(device, width, height, data):
     # First measure the text size
     with canvas(device) as draw:
         w, h = draw.textsize(status, font)
-        pw, ph = draw.textsize("Plat 88", font)
+        pw, ph = draw.textsize("Plat 88D", font)
 
     rowOneA = snapshot(
         width - w - pw - 5, 10, renderDestination(departures[0], fontBold), interval=10)
