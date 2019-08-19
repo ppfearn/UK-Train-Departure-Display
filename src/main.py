@@ -21,6 +21,7 @@ from open import isRun
 def loadConfig():
     with open('config.json', 'r') as jsonConfig:
         data = json.load(jsonConfig)
+        print ("config: ", data)
         return data
 
 def makeFont(name, size):
