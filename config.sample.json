@@ -1,7 +1,7 @@
 {
   "journey": {
     "departureStation": "",
-    "destinationStation": null,
+    "destinationStation": "",
     "stationAbbr": {
       "International": "Intl."
     }
