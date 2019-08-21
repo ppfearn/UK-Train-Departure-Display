@@ -54,7 +54,7 @@ def renderServiceStatus(departure):
             train = 'Exp '+departure["expected_departure_time"]
 
         if departure["aimed_departure_time"] == departure["expected_departure_time"]:
-            train = departure["expected_departure_time"]
+            train = "On time"
 
         w, h = draw.textsize(train, font)
         draw.text((width-w,0), text=train, font=font, fill="yellow")
