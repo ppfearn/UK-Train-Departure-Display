@@ -142,6 +142,12 @@ def loadData(apiConfig, journeyConfig):
 
     return departures, firstDepartureDestinations, stationName
 
+def drawEmptyBlankSignage(device, width, height, departureStation):
+    global stationRenderCount, pauseCount
+
+    device.clear()
+    virtualViewport = viewport(device, width=width, height=height)
+    return virtualViewport;
 
 def drawBlankSignage(device, width, height, departureStation):
     global stationRenderCount, pauseCount
@@ -272,7 +278,7 @@ try:
 
     data = loadData(config["transportApi"], config["journey"])
     if data[0] == False:
-        virtual = drawBlankSignage(
+        virtual = drawBlankSignageEmpty(
             device, width=widgetWidth, height=widgetHeight, departureStation=data[2])
     else:
         virtual = drawSignage(device, width=widgetWidth,
@@ -286,7 +292,7 @@ try:
             if(timeNow - timeAtStart >= config["refreshTime"]):
                 data = loadData(config["transportApi"], config["journey"])
                 if data[0] == False:
-                    virtual = drawBlankSignage(
+                    virtual = drawBlankSignageEmpty(
                         device, width=widgetWidth, height=widgetHeight, departureStation=data[2])
                 else:
                     virtual = drawSignage(device, width=widgetWidth,
