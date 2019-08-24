@@ -278,7 +278,7 @@ try:
 
     data = loadData(config["transportApi"], config["journey"])
     if data[0] == False:
-        virtual = drawBlankSignageEmpty(
+        virtual = drawEmptyBlankSignage(
             device, width=widgetWidth, height=widgetHeight, departureStation=data[2])
     else:
         virtual = drawSignage(device, width=widgetWidth,
@@ -292,7 +292,7 @@ try:
             if(timeNow - timeAtStart >= config["refreshTime"]):
                 data = loadData(config["transportApi"], config["journey"])
                 if data[0] == False:
-                    virtual = drawBlankSignageEmpty(
+                    virtual = drawEmptyBlankSignage(
                         device, width=widgetWidth, height=widgetHeight, departureStation=data[2])
                 else:
                     virtual = drawSignage(device, width=widgetWidth,
